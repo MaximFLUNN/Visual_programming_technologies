@@ -56,6 +56,12 @@
             this.button23 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.button19 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -401,6 +407,7 @@
             this.button15.TabStop = false;
             this.button15.Text = "⁺⁄₋";
             this.button15.UseVisualStyleBackColor = false;
+            this.button15.Click += new System.EventHandler(this.button15_Click_1);
             // 
             // button16
             // 
@@ -420,6 +427,7 @@
             this.button16.Text = ",";
             this.button16.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button16.UseVisualStyleBackColor = false;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // button18
             // 
@@ -438,7 +446,7 @@
             this.button18.TabStop = false;
             this.button18.Text = "ₓ²";
             this.button18.UseVisualStyleBackColor = false;
-            this.button18.Click += new System.EventHandler(this.button15_Click);
+            this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // button20
             // 
@@ -457,7 +465,7 @@
             this.button20.TabStop = false;
             this.button20.Text = "¹/ₓ";
             this.button20.UseVisualStyleBackColor = false;
-            this.button20.Click += new System.EventHandler(this.button15_Click);
+            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // button21
             // 
@@ -495,7 +503,7 @@
             this.button22.TabStop = false;
             this.button22.Text = "CE";
             this.button22.UseVisualStyleBackColor = false;
-            this.button22.Click += new System.EventHandler(this.button15_Click);
+            this.button22.Click += new System.EventHandler(this.button22_Click);
             // 
             // button23
             // 
@@ -514,7 +522,7 @@
             this.button23.TabStop = false;
             this.button23.Text = "%";
             this.button23.UseVisualStyleBackColor = false;
-            this.button23.Click += new System.EventHandler(this.button15_Click);
+            this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
             // label3
             // 
@@ -546,13 +554,77 @@
             this.button19.UseVisualStyleBackColor = false;
             this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
-            // Form1
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.groupBox1.Location = new System.Drawing.Point(0, -8);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(375, 503);
+            this.groupBox1.TabIndex = 22;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label6.Location = new System.Drawing.Point(86, 148);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(203, 51);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Welcome";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label5.Location = new System.Drawing.Point(80, 200);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(210, 18);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Thanks for using my calculator";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.groupBox2.Location = new System.Drawing.Point(0, 496);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(30);
+            this.groupBox2.MaximumSize = new System.Drawing.Size(400, 7);
+            this.groupBox2.MinimumSize = new System.Drawing.Size(0, 7);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(300);
+            this.groupBox2.Size = new System.Drawing.Size(400, 7);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Location = new System.Drawing.Point(104, 454);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(164, 16);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Powered by Maxim Filatov";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_calculator_window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(373, 488);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button16);
             this.Controls.Add(this.button15);
             this.Controls.Add(this.label3);
@@ -583,9 +655,12 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(391, 535);
             this.MinimumSize = new System.Drawing.Size(391, 535);
-            this.Name = "Form1";
+            this.Name = "First_calculator_window";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Калькулятор";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -619,6 +694,11 @@
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.Button button19;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
 
