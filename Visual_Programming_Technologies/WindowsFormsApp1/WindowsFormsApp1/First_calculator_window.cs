@@ -12,7 +12,7 @@ namespace WindowsFormsApp1
 {
     public partial class First_calculator_window : Form
     {
-        string sign = " ", sign_for_sqrt = "", out_1 = "", out_2 = "", out_3 = "", string_label = "";
+        string sign = " ", tmp_sign = " ", sign_for_sqrt = "", out_1 = "", out_2 = "", out_3 = "", string_label = "";
         double value_1 = 0, value_2 = 0, tmp = 0, multiply = 1.0;
         int sqrt_number = 0, del_null = 0, comma = 0;
         public First_calculator_window()
@@ -67,6 +67,7 @@ namespace WindowsFormsApp1
         {
             comma = 0;
             sqrt_number_func(ref value_1, ref value_2, ref sqrt_number);
+            replacement(ref sign, "+");
             check_sign(ref value_1, ref value_2);
             label1.Text += " + ";
             sign = "+";
@@ -80,6 +81,7 @@ namespace WindowsFormsApp1
         {
             comma = 0;
             sqrt_number_func(ref value_1, ref value_2, ref sqrt_number);
+            replacement(ref sign, "-");
             check_sign(ref value_1, ref value_2);
             label1.Text += " - ";
             sign = "-";
@@ -93,6 +95,7 @@ namespace WindowsFormsApp1
         {
             comma = 0;
             sqrt_number_func(ref value_1, ref value_2, ref sqrt_number);
+            replacement(ref sign, "*"); ;
             check_sign(ref value_1, ref value_2);
             label1.Text += " * ";
             sign = "*";
@@ -161,6 +164,7 @@ namespace WindowsFormsApp1
         {
             comma = 0;
             sqrt_number_func(ref value_1, ref value_2, ref sqrt_number);
+            replacement(ref sign, "/");
             check_sign(ref value_1, ref value_2);
             label1.Text += " / ";
             sign = "/";
@@ -276,7 +280,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void button19_Click(object sender, EventArgs e) // ← ²
+        private void button19_Click(object sender, EventArgs e)
         {
 
             string_label = label1.Text;
@@ -286,12 +290,6 @@ namespace WindowsFormsApp1
             {
                 label1.Text = string_label.Remove(size - 1, 1);
             }
-            //if (label1.Text.EndsWith(","))
-            //{
-            //    label1.Text = string_label.Remove(size - 1, 1);
-            //    comma = 0;
-            //    del_null = 1;
-            //}
             if (sign == " " && del_null == 0) {
                 if (value_1 >= -9 && value_1 <= -1) { size_char = del_null = 2; }
                 else { size_char = 1; }
@@ -318,7 +316,7 @@ namespace WindowsFormsApp1
             }
             size_char = del_null = 0;
         }
-        private void button21_Click(object sender, EventArgs e) // Доделать !
+        private void button21_Click(object sender, EventArgs e)
         {
             comma = 0;
             del_null_back(value_1, value_2, sign, sender, e);
@@ -429,6 +427,16 @@ namespace WindowsFormsApp1
                 string_label = label1.Text;
                 size = label1.Text.Length;
 
+            }
+        }
+        void replacement(ref string sign, string tmp_sign)
+        {
+            if (label1.Text.EndsWith(" ") && value_2 == 0 && sign != tmp_sign && tmp_sign != " ")
+            {
+                string_label = label1.Text;
+                int size = label1.Text.Length;
+                tmp_sign = " ";
+                if (size > 3) { label1.Text = string_label.Remove(size - 3, 3); }
             }
         }
     }
